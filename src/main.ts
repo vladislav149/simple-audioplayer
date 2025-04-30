@@ -12,13 +12,14 @@ const UI = {
   AUDIO_BUTTON_VOLUME: document.querySelector<HTMLButtonElement>(
     '.audio-button-volume'
   )!,
-  AUDIO_UPLOAD: document.querySelector<HTMLInputElement>('.audio-upload')!,
   UPLOAD_BUTTON: document.querySelector<HTMLButtonElement>('.upload-button')!,
 }
 
 const audioElement = document.createElement('audio')
 const sourceElement = document.createElement('source')
 audioElement.appendChild(sourceElement)
+const uploadAudioElement = document.createElement('input')
+uploadAudioElement.type = 'file'
 
 UI.BUTTON_START.addEventListener('click', startAudio)
 UI.BUTTON_PAUSE.addEventListener('click', pauseAudio)
@@ -26,8 +27,21 @@ audioElement.addEventListener('timeupdate', updateProgress)
 UI.AUDIO_LINE.addEventListener('click', seekAudio)
 UI.AUDIO_RANGE_VOLUME.addEventListener('click', changeVolume)
 UI.AUDIO_BUTTON_VOLUME.addEventListener('click', toggleVolume)
-UI.AUDIO_UPLOAD.addEventListener('change', uploadAudio)
+uploadAudioElement.addEventListener('change', uploadAudio)
 UI.UPLOAD_BUTTON.addEventListener('click', uploadAudioButton)
+
+// const volume = {
+//   get get() {
+//     return Number(localStorage.getItem('volume') ?? 1)
+//   },
+//   set set(value: number) {
+//     localStorage.setItem('volume', String(value))
+//   },
+// }
+
+// function setInitVolume(){
+
+// }
 
 function startAudio() {
   audioElement.play()
@@ -54,7 +68,8 @@ function seekAudio(event: MouseEvent) {
 }
 
 function changeVolume() {
-  audioElement.volume = Number(UI.AUDIO_RANGE_VOLUME.value)
+  const rawValue = Number(UI.AUDIO_RANGE_VOLUME.value)
+  audioElement.volume = Math.pow(rawValue, 2)
 }
 
 function toggleVolume() {
@@ -71,8 +86,6 @@ function uploadAudio(event: Event) {
   const input = event.target as HTMLInputElement
 
   if (input.files && input.files[0]) {
-    console.log(1)
-
     const file = input.files[0]
     const fileURL = URL.createObjectURL(file)
 
@@ -82,5 +95,5 @@ function uploadAudio(event: Event) {
 }
 
 function uploadAudioButton() {
-  UI.AUDIO_UPLOAD.click()
+  uploadAudioElement.click()
 }
