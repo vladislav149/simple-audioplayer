@@ -1,4 +1,4 @@
-import './style.css'
+import './style/style.css'
 
 const UI = {
   BUTTON_START: document.querySelector<HTMLButtonElement>('.audio-start')!,

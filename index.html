@@ -9,14 +9,22 @@
   <body>
     <div class="audio-inner">
       <input type="file" class="audio-upload" accept="audio/*" hidden />
-      <button class="upload-button">Выбрать трек</button>
-      <button class="audio-start">start</button>
+      <button class="upload-button" aria-label="upload">
+        <img src="src/icons/upload.svg" alt="upload" />
+      </button>
+      <button class="audio-start" aria-label="play">
+        <img src="src/icons/play.svg" alt="play" />
+      </button>
       <div class="audio-line">
         <div class="audio-inner-line" style="width: 0"></div>
       </div>
-      <button class="audio-pause">pause</button>
+      <button class="audio-pause" aria-label="pause">
+        <img src="src/icons/pause.svg" alt="pause" />
+      </button>
       <div class="audio-volume">
-        <button class="audio-button-volume">volume</button>
+        <button class="audio-button-volume" aria-label="volume">
+          <img src="src/icons/volume.svg" alt="volume" />
+        </button>
         <input
           type="range"
           class="audio-input-volume"
