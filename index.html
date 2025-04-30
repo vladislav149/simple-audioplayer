@@ -5,20 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/simple-audioplayer/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
-    <script type="module" crossorigin src="/simple-audioplayer/assets/index-voKbvwHo.js"></script>
-    <link rel="stylesheet" crossorigin href="/simple-audioplayer/assets/index-CyIH-SJI.css">
+    <script type="module" crossorigin src="/simple-audioplayer/assets/index-Cn4p93Cf.js"></script>
+    <link rel="stylesheet" crossorigin href="/simple-audioplayer/assets/index-tKWJmYzF.css">
   </head>
   <body>
     <div class="audio-inner">
       <input type="file" class="audio-upload" accept="audio/*" hidden />
-      <button class="upload-button">Выбрать трек</button>
-      <button class="audio-start">start</button>
+      <button class="upload-button" aria-label="upload">
+        <img src="data:image/svg+xml,%3csvg%20width='24'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%20viewBox='0%200%2024%2024'%20stroke-width='1.5'%20stroke='currentColor'%20class='size-6'%3e%3cpath%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M3%2016.5v2.25A2.25%202.25%200%200%200%205.25%2021h13.5A2.25%202.25%200%200%200%2021%2018.75V16.5m-13.5-9L12%203m0%200%204.5%204.5M12%203v13.5'%20stroke='%2362748e'%20/%3e%3c/svg%3e" alt="upload" />
+      </button>
+      <button class="audio-start" aria-label="play">
+        <img src="data:image/svg+xml,%3csvg%20width='24'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%20viewBox='0%200%2024%2024'%20stroke-width='1.5'%20stroke='currentColor'%20class='size-6'%3e%3cpath%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M5.25%205.653c0-.856.917-1.398%201.667-.986l11.54%206.347a1.125%201.125%200%200%201%200%201.972l-11.54%206.347a1.125%201.125%200%200%201-1.667-.986V5.653Z'%20stroke='%2362748e'%20/%3e%3c/svg%3e" alt="play" />
+      </button>
       <div class="audio-line">
         <div class="audio-inner-line" style="width: 0"></div>
       </div>
-      <button class="audio-pause">pause</button>
+      <button class="audio-pause" aria-label="pause">
+        <img src="data:image/svg+xml,%3csvg%20width='24'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%20viewBox='0%200%2024%2024'%20stroke-width='1.5'%20stroke='currentColor'%20class='size-6'%3e%3cpath%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M15.75%205.25v13.5m-7.5-13.5v13.5'%20stroke='%2362748e'%20/%3e%3c/svg%3e" alt="pause" />
+      </button>
       <div class="audio-volume">
-        <button class="audio-button-volume">volume</button>
+        <button class="audio-button-volume" aria-label="volume">
+          <img src="data:image/svg+xml,%3csvg%20width='24'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%20viewBox='0%200%2024%2024'%20stroke-width='1.5'%20stroke='currentColor'%20class='size-6'%3e%3cpath%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M19.114%205.636a9%209%200%200%201%200%2012.728M16.463%208.288a5.25%205.25%200%200%201%200%207.424M6.75%208.25l4.72-4.72a.75.75%200%200%201%201.28.53v15.88a.75.75%200%200%201-1.28.53l-4.72-4.72H4.51c-.88%200-1.704-.507-1.938-1.354A9.009%209.009%200%200%201%202.25%2012c0-.83.112-1.633.322-2.396C2.806%208.756%203.63%208.25%204.51%208.25H6.75Z'%20stroke='%2362748e'%20/%3e%3c/svg%3e" alt="volume" />
+        </button>
         <input
           type="range"
           class="audio-input-volume"
